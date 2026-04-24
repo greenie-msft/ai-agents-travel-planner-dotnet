@@ -1,0 +1,41 @@
+# Build outputs
+bin/
+obj/
+publish/
+*.dll
+*.exe
+*.so
+*.dylib
+
+# Node modules
+Frontend/node_modules/
+node_modules/
+
+# IDE
+.vscode/
+.vs/
+*.user
+*.suo
+*.sln.docstates
+
+# Local configuration
+local.settings.json
+.env
+.env.local
+.env.production
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+packages/
+nuget_packages/
+*/bin/
+*/obj/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
