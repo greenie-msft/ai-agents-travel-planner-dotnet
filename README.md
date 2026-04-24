@@ -33,7 +33,7 @@ Traditional AI agents can be unpredictable and inconsistent. The [Durable Task e
 
 | Component | Technology |
 |-----------|------------|
-| **Backend** | .NET 9, Azure Functions (Isolated Worker) |
+| **Backend** | .NET 10, Azure Functions (Isolated Worker) |
 | **AI Framework** | Microsoft Agent Framework with Durable Task Extension |
 | **Orchestration** | Durable Task Scheduler |
 | **AI Model** | Azure OpenAI (GPT-4o-mini) |
@@ -46,7 +46,7 @@ Traditional AI agents can be unpredictable and inconsistent. The [Durable Task e
 
 Before you begin, ensure you have the following installed:
 
-- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 - [Node.js 18+](https://nodejs.org/) and npm
 - [Azure Developer CLI (azd)](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd)
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
