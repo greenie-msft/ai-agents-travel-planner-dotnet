@@ -206,6 +206,18 @@ To remove all Azure resources and avoid ongoing charges:
 azd down --purge
 ```
 
+## Troubleshooting
+
+Encountering issues with deployment or running the application? Check out the [**Troubleshooting Guide**](./TROUBLESHOOTING.md) for solutions to common problems including:
+
+- **Azure OpenAI region availability** — Find regions that support GPT-4o-mini
+- **Redis connection errors** — Validate local and Azure Cache for Redis setup
+- **Azure Functions deployment issues** — Fix zip deployment and cold start problems
+- **Static Web App CORS errors** — Configure routing for API endpoints
+- **Authentication failures** — Resolve Entra ID and app registration issues
+
+The guide includes ready-to-use CLI scripts for testing region availability and diagnosing infrastructure problems.
+
 ## Learn More
 
 - [Durable Task Extension for Microsoft Agent Framework](https://learn.microsoft.com/en-us/agent-framework/user-guide/agents/agent-types/durable-agent/create-durable-agent)
