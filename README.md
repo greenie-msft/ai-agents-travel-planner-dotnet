@@ -36,7 +36,7 @@ Traditional AI agents can be unpredictable and inconsistent. The [Durable Task e
 | **Backend** | .NET 10, Azure Functions (Isolated Worker) |
 | **AI Framework** | Microsoft Agent Framework with Durable Task Extension |
 | **Orchestration** | Durable Task Scheduler |
-| **AI Model** | Azure OpenAI (GPT-4o-mini) |
+| **AI Model** | Azure OpenAI (gpt-5.4-mini) |
 | **Frontend** | React |
 | **Hosting** | Azure Static Web Apps, Azure Functions |
 | **Storage** | Azure Blob Storage |
@@ -72,12 +72,12 @@ az login
 
 ### 3. Choose a region
 
-When selecting a region for deployment, you need to ensure it supports the **GPT-4o-mini** model. Use the Azure CLI to verify that your chosen region has quota available for the GPT-4o-mini model:
+When selecting a region for deployment, you need to ensure it supports the **gpt-5.4-mini** model. Use the Azure CLI to verify that your chosen region has quota available for the gpt-5.4-mini model:
 
 **Bash**
 ```bash
 az cognitiveservices usage list --location "westus3"  |
-        jq -r '.[] | select(.name.value | contains("OpenAI.Standard.gpt-4o-mini"))
+        jq -r '.[] | select(.name.value | contains("OpenAI.DataZoneStandard.gpt-5.4-mini"))
                    | select(.currentValue < .limit)
                    | .name.value'
 ```
@@ -86,7 +86,7 @@ az cognitiveservices usage list --location "westus3"  |
 ```powershell
 az cognitiveservices usage list --location "westus3" | 
     ConvertFrom-Json | 
-    Where-Object { $_.name.value -like "*OpenAI.Standard.gpt-4o-mini*" -and $_.currentValue -lt $_.limit } | 
+    Where-Object { $_.name.value -like "*OpenAI.DataZoneStandard.gpt-5.4-mini*" -and $_.currentValue -lt $_.limit } | 
     Select-Object -ExpandProperty name | 
     Select-Object -ExpandProperty value
 ```
@@ -210,7 +210,7 @@ azd down --purge
 
 Encountering issues with deployment or running the application? Check out the [**Troubleshooting Guide**](./TROUBLESHOOTING.md) for solutions to common problems including:
 
-- **Azure OpenAI region availability** — Find regions that support GPT-4o-mini
+- **Azure OpenAI region availability** — Find regions that support gpt-5.4-mini
 - **Redis connection errors** — Validate local and Azure Cache for Redis setup
 - **Azure Functions deployment issues** — Fix zip deployment and cold start problems
 - **Static Web App CORS errors** — Configure routing for API endpoints
