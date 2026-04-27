@@ -39,6 +39,11 @@ azd env set MODEL_LOCATION <region>
 azd up
 ```
 
+Important:
+- Azure Cache for Redis provisioning can take significantly longer than other resources.
+- It is normal for `azd up` to appear paused while Redis is in `Creating` state.
+- Do not abort early unless Azure reports an explicit terminal failure.
+
 4. Redeploy API after first deployment
 
 ```bash
