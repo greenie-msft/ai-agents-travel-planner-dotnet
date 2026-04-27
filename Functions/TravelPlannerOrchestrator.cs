@@ -155,7 +155,7 @@ public class TravelPlannerOrchestrator
                         Duration: {travelRequest.DurationInDays} days
                         Preferred Cuisine: Any
                         Include Hidden Gems: true
-                        Family Friendly: {travelRequest.SpecialRequirements.Contains("family", StringComparison.OrdinalIgnoreCase)}";
+                        Family Friendly: {(travelRequest.SpecialRequirements ?? "").Contains("family", StringComparison.OrdinalIgnoreCase)}";
 
         // Execute both agent calls in parallel
         logger.LogInformation("Calling itinerary agent with prompt length: {Length}", itineraryPrompt.Length);

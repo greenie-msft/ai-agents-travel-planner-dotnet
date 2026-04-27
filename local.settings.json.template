@@ -6,7 +6,7 @@
     "DURABLE_TASK_SCHEDULER_CONNECTION_STRING": "Endpoint=http://localhost:8080;Authentication=None",
     "TASKHUB_NAME": "default",
     "AZURE_OPENAI_ENDPOINT": "https://<your-azure-openai-resource>.openai.azure.com/",
-    "AZURE_OPENAI_DEPLOYMENT_NAME": "gpt-4o-mini",
+    "AZURE_OPENAI_DEPLOYMENT_NAME": "gpt-5.4-mini",
     "REDIS_CONNECTION_STRING": "localhost:6379"
   },
   "Host": {

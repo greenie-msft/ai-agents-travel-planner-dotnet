@@ -141,7 +141,7 @@
     },
     "modelName": {
       "type": "string",
-      "defaultValue": "gpt-4o-mini",
+      "defaultValue": "gpt-5.4-mini",
       "metadata": {
         "description": "Model name for deployment"
       }
@@ -155,7 +155,7 @@
     },
     "modelVersion": {
       "type": "string",
-      "defaultValue": "2024-07-18",
+      "defaultValue": "2026-03-17",
       "metadata": {
         "description": "Model version for deployment"
       }

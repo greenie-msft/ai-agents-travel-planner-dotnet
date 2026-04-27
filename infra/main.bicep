@@ -62,13 +62,13 @@ param principalId string = deployer().objectId
 param aiServicesName string = 'agentaiservices'
 
 @description('Model name for deployment')
-param modelName string = 'gpt-4.1'
+param modelName string = 'gpt-5.4-mini'
 
 @description('Model format for deployment')
 param modelFormat string = 'OpenAI'
 
 @description('Model version for deployment')
-param modelVersion string = '2025-04-14'
+param modelVersion string = '2026-03-17'
 
 @description('Model deployment SKU name')
 param modelSkuName string = 'S0'
@@ -249,7 +249,7 @@ module api 'br/public:avm/res/web/site:0.19.3' = {
       }
       runtime: {
         name: 'dotnet-isolated'
-        version: '9.0'
+        version: '10.0'
       }
     }
     virtualNetworkSubnetResourceId: skipVnet ? '' : '${serviceVirtualNetwork!.outputs.resourceId}/subnets/app-subnet'
@@ -363,12 +363,6 @@ module redis 'br/public:avm/res/cache/redis:0.16.4' = {
         accessPolicyName: 'Data Owner'
         objectId: apiUserAssignedIdentity.outputs.principalId
         objectIdAlias: 'api-managed-identity'
-      }
-      {
-        name: 'user-access'
-        accessPolicyName: 'Data Owner'
-        objectId: principalId
-        objectIdAlias: 'deployer-user'
       }
     ]
   }
