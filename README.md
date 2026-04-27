@@ -124,9 +124,19 @@ This command will:
 
 Follow the prompts to select your subscription and region.
 
-### 5. Deploy the Web Frontend
+### 5. Redeploy the API
 
-After the initial deployment, deploy the web frontend with the correct API URL:
+After the initial `azd up`, redeploy the API service so the frontend picks up the correct API URL:
+
+```bash
+azd deploy api
+```
+
+> **Note**: On first deployment, the `REACT_APP_API_URL` environment variable may not be set correctly because the Function App URL is only known after provisioning completes. Running `azd deploy api` ensures the frontend is built with the correct URL injected.
+
+### 6. Deploy the Web Frontend
+
+Deploy the web frontend with the correct API URL:
 
 ```bash
 azd package web
@@ -211,6 +221,7 @@ azd down --purge
 Encountering issues with deployment or running the application? Check out the [**Troubleshooting Guide**](./TROUBLESHOOTING.md) for solutions to common problems including:
 
 - **Azure OpenAI region availability** — Find regions that support gpt-5.4-mini
+- **Frontend shows blank chat or can't reach the API** — Re-run `azd deploy api` then `azd deploy web` to rebuild the frontend with the correct `REACT_APP_API_URL`
 - **Redis connection errors** — Validate local and Azure Cache for Redis setup
 - **Azure Functions deployment issues** — Fix zip deployment and cold start problems
 - **Static Web App CORS errors** — Configure routing for API endpoints
